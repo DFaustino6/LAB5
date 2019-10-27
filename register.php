@@ -74,7 +74,7 @@ $smarty->config_dir = 'configs';
   $smarty->assign('Username',$Username);
   $smarty->assign('Email',$Email);
   $smarty->assign('Pwd',$Pwd);
-  $smarty->assign('confPwd',$ConfPwd);
+  $smarty->assign('ConfPwd',$ConfPwd);
   $smarty->assign('ErrorMsg',$ErrorMsg);
   $smarty->assign('ErrorType',$ErrorType);
  

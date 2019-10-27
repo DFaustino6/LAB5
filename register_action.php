@@ -12,7 +12,7 @@
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd'])
 				return 4;
 			else
-				submit();
+				submit($db);
 		}
 	
 
