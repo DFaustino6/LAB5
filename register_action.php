@@ -7,8 +7,12 @@
 		if($db && !empty($_REQUEST)){
 			$Email = $_REQUEST['Email'];
 			$query= "SELECT * from users where email = $Email";
-			
-			if($_REQUEST['Email']>0)
+			if(!($result = @ mysql_query($query,$db)))
+   				showerror();
+   			$nrows  = mysql_num_rows($result);
+   			for($i=0; $i<$nrows; $i++)
+     			$tuple[$i] = mysql_fetch_array($result,MYSQL_ASSOC);
+			if($query<0)
 				return 1;
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd'])
 				return 4;
