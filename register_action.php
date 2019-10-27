@@ -3,7 +3,7 @@
 
 	function checkSubmission(){
 	if($db){
-		$query= "SELECT * from users where email = $_REQUEST['Email']";
+		$query= "SELECT * from users where email = {$_REQUEST['Email']}";
 	
 		if($_REQUEST['Email']>0)
 			return 1;
