@@ -1,5 +1,5 @@
 <?php
 	foreach ($_REQUEST as $key => $value) {
-		echo $key." ".$value."<br>"
+		echo $key." ".$value."<br>";
 	}
 ?>	
