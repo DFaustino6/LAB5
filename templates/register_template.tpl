@@ -48,25 +48,25 @@
 			 	<div class="form-group">
 			      <label class="control-label col-sm-2" for="email">Username:</label>
 			      <div class="col-sm-10">
-			        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" value="{$Username}" required>
+			        <input type="text" class="form-control" id="username" placeholder="Enter username" name="Username" value="{$Username}" required>
 			      </div>
 			    </div>
 			    <div class="form-group">
 			      <label class="control-label col-sm-2" for="email">Email:</label>
 			      <div class="col-sm-10">
-			        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="{$Email}" required>
+			        <input type="email" class="form-control" id="email" placeholder="Enter email" name="Email" value="{$Email}" required>
 			      </div>
 			    </div>
 			    <div class="form-group">
 			      <label class="control-label col-sm-2" for="pwd">Password:</label>
 			      <div class="col-sm-10">          
-			        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" value="{$Pwd}" required>
+			        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="Pwd" value="{$Pwd}" required>
 			      </div>
 			    </div>
 			    <div class="form-group">
 			      <label class="control-label col-sm-2" for="pwd">Confirm Password:</label>
 			      <div class="col-sm-10">          
-			        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="confpwd" value="[$confPwd}">
+			        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="ConfPwd" value="[$ConfPwd}">
 			      </div>
 			    </div>
 			    <div class="form-group">        
