@@ -22,16 +22,16 @@ $db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
              ORDER BY microposts.created_at DESC";*/
  
   // executar a query
-  if(!($result = @ mysql_query($query,$db )))
-   showerror();
+ /* if(!($result = @ mysql_query($query,$db )))
+   showerror();*/
 
 
 
   // vai buscar o resultado da query
 
-  $nrows  = mysql_num_rows($result);
+ /* $nrows  = mysql_num_rows($result);
    for($i=0; $i<$nrows; $i++)
-     $tuple[$i] = mysql_fetch_array($result,MYSQL_ASSOC);
+     $tuple[$i] = mysql_fetch_array($result,MYSQL_ASSOC);*/
 
   // faz a atribuição das variáveis do template smarty
   //$smarty->assign('posts',$tuple);
