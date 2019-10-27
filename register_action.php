@@ -19,13 +19,13 @@
 				submit($db);
 		}
 	
+	$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
+			VALUES ('test','test@test','sd',NOW(),NOW())";
 
 	function submit($db){
 			$pwdHash=substr(md5($_REQUEST['Pwd']),0,32);
 			$Email = $_REQUEST['Email'];
 			$Username = $_REQUEST['Username'];
-			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
-			VALUES ('test','test@test','sd',NOW(),NOW())";
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
 			VALUES ($Username,$Email,$pwdHash,NOW(),NOW())";
 	}
