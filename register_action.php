@@ -14,18 +14,15 @@
 			else
 				submit();
 		}
-	mysql_close($db);
 	
 
 	function submit($db){
-	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 		if ($db) {
 			echo "entered submit";
 			$pwdHash=substr(md5($_REQUEST['Pwd']),0,32);
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
 			VALUES ({$_REQUEST['Username']},{$_REQUEST['Email']},{$pwdHash},NOW(),NOW())";
-		}
-		 mysql_close($db);	
+		}	 	
 	}
-	
+	mysql_close($db);
 ?>	
