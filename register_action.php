@@ -1,9 +1,8 @@
 <?php
 	include 'db.php';
-	
+	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 
 	function checkSubmission(){
-	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 	if($db){
 		$query= "SELECT * from users where email = {$_REQUEST['Email']}";
 	
