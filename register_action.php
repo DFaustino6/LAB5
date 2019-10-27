@@ -1,12 +1,12 @@
 <?php
 	include 'db.php';
-	print_r ($_REQUEST);
+	//print_r ($_REQUEST);
 
 
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 		if($db && !empty($_REQUEST)){
 			$query= "SELECT * from users where email = {$_REQUEST['Email']}";
-		
+			echo $query;
 			if($_REQUEST['Email']>0)
 				return 1;
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd'])
