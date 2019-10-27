@@ -4,7 +4,7 @@
 
 
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
-		if($db){
+		if($db && !empty($_REQUEST)){
 			$query= "SELECT * from users where email = {$_REQUEST['Email']}";
 		
 			if($_REQUEST['Email']>0)
@@ -18,7 +18,7 @@
 
 	function submit($db){
 		if ($db) {
-			echo "entered submit";
+			//echo "entered submit";
 			$pwdHash=substr(md5($_REQUEST['Pwd']),0,32);
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
 			VALUES ({$_REQUEST['Username']},{$_REQUEST['Email']},{$pwdHash},NOW(),NOW())";
