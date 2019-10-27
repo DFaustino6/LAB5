@@ -2,7 +2,7 @@
 	include 'db.php';
 	
 
-	function checkSubmission(){
+
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 		if($db){
 			$query= "SELECT * from users where email = {$_REQUEST['Email']}";
@@ -15,7 +15,7 @@
 				submit();
 		}
 	mysql_close($db);
-	}
+	
 
 	function submit($db){
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
