@@ -7,7 +7,7 @@
 		if($db && !empty($_REQUEST)){
 			$Email = $_REQUEST['Email'];
 			$query= "SELECT * from users where email = $Email";
-			echo $query;
+			
 			if($_REQUEST['Email']>0)
 				return 1;
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd'])
@@ -25,6 +25,7 @@
 			$Username = $_REQUEST['Username'];
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
 			VALUES ($Username,$Email,$pwdHash,NOW(),NOW())";
+			echo $query;
 		}	 	
 	}
 	mysql_close($db);
