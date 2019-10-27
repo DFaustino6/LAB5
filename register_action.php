@@ -13,7 +13,6 @@
 			else
 				submit();
 		}
-	 mysql_close($db);
 	}
 
 	function submit($db){
