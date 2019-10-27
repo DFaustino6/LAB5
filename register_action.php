@@ -16,17 +16,18 @@
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd'])
 				return 4;
 			else
-				submit($db);
+				submit();
 		}
-	
 
-	function submit($db){
+	function submit(){
+			$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 			$pwdHash=substr(md5($_REQUEST['Pwd']),0,32);
 			$Email = $_REQUEST['Email'];
 			$Username = $_REQUEST['Username'];
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
 			VALUES ($Username,$Email,$pwdHash,NOW(),NOW())";
 			echo $query;
+			mysql_close($db);
 	}
-	mysql_close($db);
+	
 ?>	
