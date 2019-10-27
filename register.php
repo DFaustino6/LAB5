@@ -32,6 +32,35 @@ $db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
  /* $nrows  = mysql_num_rows($result);
    for($i=0; $i<$nrows; $i++)
      $tuple[$i] = mysql_fetch_array($result,MYSQL_ASSOC);*/
+  foreach ($variable as $key => $value) {
+       # code...
+  }
+
+                    /*---->Error Type&Message>---*/
+ switch ($ECode) {
+    case 0:
+        //Este erro nao deve aperecer pois o HTML pede todos os campos
+        $ErrorMsg = "Todos os campos devem ser preenchidos";
+        $ErrorType = 1;
+        break;
+    case 1:
+        $ErrorMsg = "Email já existe na base de dados";
+        $ErrorType = 1;
+        break;
+    case 2:
+        $ErrorMsg = "Email tem formato incorrecto";
+        $ErrorType = 1;
+        break;
+    case 4:
+        //Este erro nao deve aperecer pois o HTML pede todos os campos
+        $ErrorMsg = "Password em branco";
+        $ErrorType = 1;
+        break;
+    case 5:
+        $ErrorMsg = "Passwords não coincidem";
+        $ErrorType = 1;
+        break;
+  }
 
   // faz a atribuição das variáveis do template smarty
   //$smarty->assign('posts',$tuple);
@@ -41,6 +70,13 @@ $db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
   $smarty->assign('FORUMName',"DAW Lab");
   $smarty->assign('MENU4',"Login");
   $smarty->assign('MENU5',"Register");
+  $smarty->assign('Username',$Username);
+  $smarty->assign('Email',$Email);
+  $smarty->assign('Pwd',$Password);
+  $smarty->assign('confPwd',$ConfPwd);
+  $smarty->assign('ErrorMsg',$ErrorMsg);
+  $smarty->assign('ErrorType',$ErrorType);
+ 
   // Mostra a tabela
   $smarty->display('register_template.tpl');
 
