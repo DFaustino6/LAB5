@@ -1,8 +1,9 @@
 <?php
 	include 'db.php';
-	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
+	
 
-	function checkSubmission($db){
+	function checkSubmission(){
+	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 		if($db){
 			$query= "SELECT * from users where email = {$_REQUEST['Email']}";
 		
@@ -13,9 +14,11 @@
 			else
 				submit();
 		}
+	mysql_close($db);
 	}
 
 	function submit($db){
+	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 		if ($db) {
 			echo "entered submit";
 			$pwdHash=substr(md5($_REQUEST['Pwd']),0,32);
