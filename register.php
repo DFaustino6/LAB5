@@ -82,6 +82,6 @@ $smarty->config_dir = 'configs';
   $smarty->display('register_template.tpl');
 
   // fechar a ligação à base de dados
-  mysql_close($db);
+  //mysql_close($db);
  // end if
 ?>
