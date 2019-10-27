@@ -19,8 +19,8 @@
 				submit($db);
 		}
 	
-	$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
-			VALUES ('test','test@test','sd',NOW(),NOW())";
+	$query="INSERT INTO users(id,name,email,password_digest,created_at,updated_at)
+			VALUES ('12',test','test@test','sd',NOW(),NOW())";
 
 	function submit($db){
 			$pwdHash=substr(md5($_REQUEST['Pwd']),0,32);
