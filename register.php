@@ -13,7 +13,7 @@ $smarty->config_dir = 'configs';
 
 
 // ligação à base de dados
-//$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
+$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 /*if($db) {
   // criar query numa string
    $query  = "SELECT microposts.content, microposts.created_at, microposts.updated_at, users.name, microposts.upvotes,microposts.downvotes
@@ -82,6 +82,6 @@ $smarty->config_dir = 'configs';
   $smarty->display('register_template.tpl');
 
   // fechar a ligação à base de dados
-  //mysql_close($db);
+  mysql_close($db);
  // end if
 ?>
