@@ -10,7 +10,6 @@
 			if(!($result = @ mysql_query($query,$db)))
    				showerror();
    			$nrows  = mysql_num_rows($result);
-   			echo $nrows;
 
 			if($nrows>0)
 				return 1;
@@ -22,7 +21,7 @@
 	
 
 	function submit($db){
-			//echo "entered submit"; 
+			echo "entered submit"; 
 			$pwdHash=substr(md5($_REQUEST['Pwd']),0,32);
 			$Email = $_REQUEST['Email'];
 			$Username = $_REQUEST['Username'];
