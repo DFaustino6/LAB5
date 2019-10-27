@@ -5,7 +5,8 @@
 
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 		if($db && !empty($_REQUEST)){
-			$query= "SELECT * from users where email = $_REQUEST['Email']";
+			$Email = $_REQUEST['Email'];
+			$query= "SELECT * from users where email = $Email";
 			echo $query;
 			if($_REQUEST['Email']>0)
 				return 1;
@@ -20,8 +21,10 @@
 		if ($db) {
 			//echo "entered submit";
 			$pwdHash=substr(md5($_REQUEST['Pwd']),0,32);
+			$Email = $_REQUEST['Email'];
+			$Username = $_REQUEST['Username'];
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
-			VALUES ({$_REQUEST['Username']},{$_REQUEST['Email']},{$pwdHash},NOW(),NOW())";
+			VALUES ($Username,$Email,$pwdHash,NOW(),NOW())";
 		}	 	
 	}
 	mysql_close($db);
