@@ -44,5 +44,5 @@ $db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 
   // fechar a ligação à base de dados
   mysql_close($db);
-} // end if
+ // end if
 ?>
