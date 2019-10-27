@@ -18,11 +18,11 @@
 	
 
 	function submit($db){
-			//echo "entered submit";
-			print_r($_REQUEST); 
+			//echo "entered submit"; 
 			$pwdHash=substr(md5($_REQUEST['Pwd']),0,32);
 			$Email = $_REQUEST['Email'];
 			$Username = $_REQUEST['Username'];
+			echo $Email." ".$Username;
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
 			VALUES ($Username,$Email,$pwdHash,NOW(),NOW())";
 				
