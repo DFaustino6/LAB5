@@ -1,6 +1,6 @@
 <?php
 	include 'db.php';
-	//print_r ($_REQUEST);
+	print_r ($_REQUEST);
 
 
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
@@ -14,11 +14,13 @@
 			if($nrows>0){
 				mysql_close($db);
 				$ErrorType=1;
+				redirect("",$Username,$ErrorType);
 				return $ErrorType;
 			}
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
 				mysql_close($db);
 				$ErrorType=4;
+				redirect("",$Username,$ErrorType);
 				return $ErrorType;
 			}
 			else
@@ -36,4 +38,8 @@
 			header("Location: register_success.html");
 	}
 	mysql_close($db);
+
+	function redirect($Email,$Username,$Error) {
+    	header("Location: register.php?Error=$ErrorType&Email=$Email&Username=$Username");
+	}
 ?>	

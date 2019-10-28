@@ -18,7 +18,7 @@ $smarty->config_dir = 'configs';
           $ErrorMsg = "Todos os campos devem ser preenchidos";
           break;
       case 1:
-          $ErrorMsg = "Email já existe na base de dados";
+          $ErrorMsg = "Email já existe na base de dados"; 
           break;
         //Erro resolvido pelo HTML
       case 2:
