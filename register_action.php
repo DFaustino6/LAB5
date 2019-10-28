@@ -15,13 +15,11 @@
 				mysql_close($db);
 				$ErrorType=1;
 				redirect("",$_REQUEST['Username'],$ErrorType);
-				return $ErrorType;
 			}
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
 				mysql_close($db);
 				$ErrorType=4;
 				redirect($Email,$_REQUEST['Username'],$ErrorType);
-				return $ErrorType;
 			}
 			else
 				submit($db);
