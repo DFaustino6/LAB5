@@ -14,13 +14,13 @@
 			if($nrows>0){
 				mysql_close($db);
 				$ErrorType=1;
-				redirect("",$Username,$ErrorType);
+				redirect("",$_REQUEST['Username'],$ErrorType);
 				return $ErrorType;
 			}
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
 				mysql_close($db);
 				$ErrorType=4;
-				redirect($Email,$Username,$ErrorType);
+				redirect($_REQUEST['Email'],$_REQUEST['Username'],$ErrorType);
 				return $ErrorType;
 			}
 			else
