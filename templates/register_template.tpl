@@ -88,9 +88,11 @@
 			        <button type="submit" class="btn btn-default">Register</button> <button type="submit" class="btn btn-default">Clear</button>
 			      </div>
 			    </div>
-			    <div class="container-fluid text-center" style="background-color: #ff9d9d;border-radius:5px">
-					<h4 style="color: white;">{$ErrorMsg}</h4>
-				</div>
+			    {if $ErrorType gt -1}
+				    <div class="container-fluid text-center" style="background-color: #ff9d9d;border-radius:5px">
+						<h4 style="color: white;">{$ErrorMsg}</h4>
+					</div>
+				{/if}
 		</div>
 	</div>
 </div>
