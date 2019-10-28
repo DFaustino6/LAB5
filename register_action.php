@@ -20,7 +20,7 @@
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
 				mysql_close($db);
 				$ErrorType=4;
-				redirect($_REQUEST['Email'],$_REQUEST['Username'],$ErrorType);
+				redirect($Email,$_REQUEST['Username'],$ErrorType);
 				return $ErrorType;
 			}
 			else
