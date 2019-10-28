@@ -32,37 +32,34 @@ $db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
  /* $nrows  = mysql_num_rows($result);
    for($i=0; $i<$nrows; $i++)
      $tuple[$i] = mysql_fetch_array($result,MYSQL_ASSOC);*/
-  foreach ($variable as $key => $value) {
-       # code...
-  }
 
-                    /*---->Error Type&Message>---*/
- switch ($ECode) {
-    case 0:
+  function errorMsg(){
+   switch ($ECode) {
+      case 0:
+          //Erro resolvido pelo HTML
+          $ErrorMsg = "Todos os campos devem ser preenchidos";
+          $ErrorType = 0;
+          break;
+      case 1:
+          $ErrorMsg = "Email já existe na base de dados";
+          $ErrorType = 1;
+          break;
         //Erro resolvido pelo HTML
-        $ErrorMsg = "Todos os campos devem ser preenchidos";
-        $ErrorType = 0;
-        break;
-    case 1:
-        $ErrorMsg = "Email já existe na base de dados";
-        $ErrorType = 1;
-        break;
-      //Erro resolvido pelo HTML
-    case 2:
-        $ErrorMsg = "Email tem formato incorrecto";
-        $ErrorType = 2;
-        break;
-    case 3:
-        //Erro resolvido pelo HTML
-        $ErrorMsg = "Password em branco";
-        $ErrorType = 3;
-        break;
-    case 4:
-        $ErrorMsg = "Passwords não coincidem";
-        $ErrorType = 4;
-        break;
+      case 2:
+          $ErrorMsg = "Email tem formato incorrecto";
+          $ErrorType = 2;
+          break;
+      case 3:
+          //Erro resolvido pelo HTML
+          $ErrorMsg = "Password em branco";
+          $ErrorType = 3;
+          break;
+      case 4:
+          $ErrorMsg = "Passwords não coincidem";
+          $ErrorType = 4;
+          break;
+    }
   }
-
   // faz a atribuição das variáveis do template smarty
   //$smarty->assign('posts',$tuple);
   $smarty->assign('MENU1',"SubForum1");
