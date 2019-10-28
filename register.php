@@ -11,7 +11,13 @@ $smarty->compile_dir = 'templates_c';
 $smarty->cache_dir = 'cache';
 $smarty->config_dir = 'configs';
 
-  function errorMsg(){
+ if(isset($_REQUEST['ErrorType'])){
+      $ErrorMsg=errorMsg($_REQUEST['ErrorType']);
+     $Username=$_REQUEST['Username'];
+     $Email=$_REQUEST['Email'];
+  }
+
+  function errorMsg($ErrorType){
    switch ($ErrorType) {
       case 0:
           //Erro resolvido pelo HTML
@@ -32,7 +38,12 @@ $smarty->config_dir = 'configs';
           $ErrorMsg = "Passwords não coincidem";
           break;
     }
+    return $ErrorMsg;
   }
+
+
+     
+
   // faz a atribuição das variáveis do template smarty
   //$smarty->assign('posts',$tuple);
   $smarty->assign('MENU1',"SubForum1");
@@ -43,11 +54,11 @@ $smarty->config_dir = 'configs';
   $smarty->assign('MENU5',"Register");
   $smarty->assign('Username',$Username);
   $smarty->assign('Email',$Email);
-  $smarty->assign('Pwd',$Pwd);
-  $smarty->assign('ConfPwd',$ConfPwd);
+  $smarty->assign('Pwd',"");
+  $smarty->assign('ConfPwd',"");
   $smarty->assign('ErrorMsg',$ErrorMsg);
   $smarty->assign('ErrorType',$ErrorType);
- 
+  
   // Mostra a tabela
   $smarty->display('register_template.tpl');
   print_r ($_REQUEST);

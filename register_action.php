@@ -1,8 +1,6 @@
 <?php
 	include 'db.php';
-	print_r ($_REQUEST);
-
-
+	
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 		if($db && !empty($_REQUEST)){
 			$Email = $_REQUEST['Email'];
