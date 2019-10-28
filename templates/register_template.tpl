@@ -89,7 +89,7 @@
 			      </div>
 			    </div>
 			    <div class="container-fluid text-center" style="background-color: #ff9d9d;border-radius:5px">
-					<h3 style="color: white;">Erro message</h3>
+					<h4 style="color: white;">Erro message</h4>
 				</div>
 		</div>
 	</div>
