@@ -13,11 +13,13 @@
 
 			if($nrows>0){
 				mysql_close($db);
-				return 1;
+				$ErrorType=1;
+				return $ErrorType;
 			}
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
 				mysql_close($db);
-				return 4;
+				$ErrorType=4;
+				return $ErrorType;
 			}
 			else
 				submit($db);

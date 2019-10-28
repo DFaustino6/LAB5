@@ -12,29 +12,24 @@ $smarty->cache_dir = 'cache';
 $smarty->config_dir = 'configs';
 
   function errorMsg(){
-   switch ($ECode) {
+   switch ($ErrorType) {
       case 0:
           //Erro resolvido pelo HTML
           $ErrorMsg = "Todos os campos devem ser preenchidos";
-          $ErrorType = 0;
           break;
       case 1:
           $ErrorMsg = "Email já existe na base de dados";
-          $ErrorType = 1;
           break;
         //Erro resolvido pelo HTML
       case 2:
           $ErrorMsg = "Email tem formato incorrecto";
-          $ErrorType = 2;
           break;
       case 3:
           //Erro resolvido pelo HTML
           $ErrorMsg = "Password em branco";
-          $ErrorType = 3;
           break;
       case 4:
           $ErrorMsg = "Passwords não coincidem";
-          $ErrorType = 4;
           break;
     }
   }
