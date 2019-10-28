@@ -25,6 +25,7 @@
 			$Username = $_REQUEST['Username'];
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
 			VALUES ($Username,$Email,$pwdHash,NOW(),NOW())";
+			$result=mysql_query($query,$db);
 			echo $query;
 	}
 	mysql_close($db);
