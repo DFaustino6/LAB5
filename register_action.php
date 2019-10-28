@@ -1,6 +1,6 @@
 <?php
 	include 'db.php';
-	print_r ($_REQUEST);
+	//print_r ($_REQUEST);
 
 
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
@@ -20,7 +20,7 @@
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
 				mysql_close($db);
 				$ErrorType=4;
-				redirect("",$Username,$ErrorType);
+				redirect($Email,$Username,$ErrorType);
 				return $ErrorType;
 			}
 			else
@@ -34,8 +34,7 @@
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
 			VALUES ('$Username','$Email','$pwdHash',NOW(),NOW())";
 			$result= @ mysql_query($query,$db);
-			echo $query;
-			//header("Location: register_success.html");
+			header("Location: register_success.html");
 	}
 	mysql_close($db);
 
