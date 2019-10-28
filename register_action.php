@@ -35,7 +35,7 @@
 			VALUES ('$Username','$Email','$pwdHash',NOW(),NOW())";
 			$result= @ mysql_query($query,$db);
 			echo $query;
-			header("Location: register_success.html");
+			//header("Location: register_success.html");
 	}
 	mysql_close($db);
 
