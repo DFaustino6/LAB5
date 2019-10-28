@@ -1,6 +1,6 @@
 <?php
 	include 'db.php';
-	//print_r ($_REQUEST);
+	print_r ($_REQUEST);
 
 
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
@@ -12,12 +12,10 @@
    			$nrows  = mysql_num_rows($result);
 
 			if($nrows>0){
-				mysql_close($db);
 				$ErrorType=1;
 				redirect("",$_REQUEST['Username'],$ErrorType);
 			}
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
-				mysql_close($db);
 				$ErrorType=4;
 				redirect($Email,$_REQUEST['Username'],$ErrorType);
 			}

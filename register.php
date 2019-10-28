@@ -50,5 +50,5 @@ $smarty->config_dir = 'configs';
  
   // Mostra a tabela
   $smarty->display('register_template.tpl');
-
+  print_r ($_REQUEST);
 ?>
