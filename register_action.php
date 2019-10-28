@@ -37,6 +37,6 @@
 	mysql_close($db);
 
 	function redirect($Email,$Username,$ErrorType) {
-    	header("Location: register.php?Error=$ErrorType&Email=$Email&Username=$Username");
+    	header("Location: register.php?ErrorType=$ErrorType&Email=$Email&Username=$Username");
 	}
 ?>	
