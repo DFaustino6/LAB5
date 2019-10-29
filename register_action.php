@@ -11,11 +11,11 @@
 			if($nrows>0){
 				$ErrorType=1;
 				print_r($ErrorType);
-				//returnRegister("",$_REQUEST['Username'],$ErrorType);
+				returnRegister("",$_REQUEST['Username'],$ErrorType);
 			}
 			elseif($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
 				$ErrorType=4;
-				//returnRegister($Email,$_REQUEST['Username'],$ErrorType);
+				returnRegister($Email,$_REQUEST['Username'],$ErrorType);
 			}
 			else
 				submit($db);
@@ -28,7 +28,7 @@
 			$query="INSERT INTO users(name,email,password_digest,created_at,updated_at)
 			VALUES ('$Username','$Email','$pwdHash',NOW(),NOW())";
 			$result= @ mysql_query($query,$db);
-			//header("Location: register_success.html");
+			header("Location: register_success.html");
 	}
 	mysql_close($db);
 
