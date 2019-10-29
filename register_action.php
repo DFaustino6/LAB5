@@ -13,7 +13,7 @@
 				print_r($ErrorType);
 				//returnRegister("",$_REQUEST['Username'],$ErrorType);
 			}
-			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
+			elseif($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
 				$ErrorType=4;
 				//returnRegister($Email,$_REQUEST['Username'],$ErrorType);
 			}
