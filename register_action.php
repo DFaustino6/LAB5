@@ -11,11 +11,11 @@
 
 			if($nrows>0){
 				$ErrorType=1;
-				redirect("",$_REQUEST['Username'],$ErrorType);
+				returnRegister("",$_REQUEST['Username'],$ErrorType);
 			}
 			if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd']){
 				$ErrorType=4;
-				redirect($Email,$_REQUEST['Username'],$ErrorType);
+				returnRegister($Email,$_REQUEST['Username'],$ErrorType);
 			}
 			else
 				submit($db);
@@ -32,7 +32,7 @@
 	}
 	mysql_close($db);
 
-	function redirect($Email,$Username,$ErrorType) {
+	function returnRegister($Email,$Username,$ErrorType) {
     	header("Location: register.php?ErrorType=$ErrorType&Email=$Email&Username=$Username");
 	}
 ?>	
