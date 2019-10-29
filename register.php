@@ -57,7 +57,7 @@ $smarty->config_dir = 'configs';
   $smarty->assign('Pwd',"");
   $smarty->assign('ConfPwd',"");
   $smarty->assign('ErrorMsg',$ErrorMsg);
-  $smarty->assign('ErrorType',$ErrorType);
+  $smarty->assign('ErrorType',$_REQUEST['ErrorType']);
   
   // Mostra a tabela
   $smarty->display('register_template.tpl');
