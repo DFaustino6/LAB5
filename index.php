@@ -33,6 +33,7 @@ if($db) {
    for($i=0; $i<$nrows; $i++)
      $tuple[$i] = mysql_fetch_array($result,MYSQL_ASSOC);
 
+   
   // faz a atribuição das variáveis do template smarty
   $smarty->assign('posts',$tuple);
   $smarty->assign('MENU1',"SubForum1");
@@ -40,7 +41,7 @@ if($db) {
   $smarty->assign('MENU3',"SubForum3");
   $smarty->assign('FORUMName',"DAW Lab");
   $smarty->assign('MENU4',"Logout");
-   $smarty->assign('MENU5',"Welcome" $_REQUEST['Username']);
+   $smarty->assign('MENU5',$_REQUEST['Username']);
   // Mostra a tabela
   $smarty->display('index_template.tpl');
 

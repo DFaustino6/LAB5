@@ -12,7 +12,7 @@ $smarty->cache_dir = 'cache';
 $smarty->config_dir = 'configs';
 
  if(isset($_REQUEST['ErrorType'])){
-      $ErrorMsg=errorMsg($_REQUEST['ErrorType']);
+     $ErrorMsg=errorMsg($_REQUEST['ErrorType']);
      $Username=$_REQUEST['Username'];
      $Email=$_REQUEST['Email'];
   }
