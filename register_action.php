@@ -31,8 +31,8 @@
 
 	function samePwd(){
 		if($_REQUEST['ConfPwd']!=$_REQUEST['Pwd'])
-			return true;
-		return false;
+			return false;
+		return true;
 	}
 
 	function submit($db){
