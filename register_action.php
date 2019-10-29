@@ -3,8 +3,8 @@
 	
 	$db = dbconnect($hostname,$db_name,$db_user,$db_passwd);
 		if($db && !empty($_REQUEST)){
-			
-			if(existingEmail($db)){
+			$Email = $_REQUEST['Email'];
+			if(existingEmail($db,$Email)){
 				$ErrorType=1;
 				returnRegister("",$_REQUEST['Username'],$ErrorType);
 			}
@@ -16,8 +16,7 @@
 				submit($db);
 		}
 
-	function existingEmail($db){
-		$Email = $_REQUEST['Email'];
+	function existingEmail($db,$Email){
 		$query= "SELECT * from users where email = '$Email'";
 		if(!($result = @ mysql_query($query,$db)))
    			showerror();
