@@ -34,7 +34,7 @@
         </ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="#" style="color: white">{$MENU4}</a></li>
-			<li><a href="#" style="color: white">{$MENU5}</a></li>
+			<li><a href="{$href5}" style="color: white">{$MENU5}</a></li>
 		</ul>
 	</div>
 </nav>
