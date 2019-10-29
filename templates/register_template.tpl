@@ -90,7 +90,7 @@
 			    </div>
 			    {if $ErrorType gt -1}
 				    <div class="container-fluid text-center" style="background-color: #ff9d9d;border-radius:5px">
-						<h4 style="color: white;">{$ErrorMsg}</h4>
+						<h4 style="color: red;">{$ErrorMsg}</h4>
 					</div>
 				{/if}
 		</div>
