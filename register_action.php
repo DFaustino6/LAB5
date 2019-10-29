@@ -8,7 +8,7 @@
 			if(!($result = @ mysql_query($query,$db)))
    				showerror();
    			$nrows  = mysql_num_rows($result);
-
+   			echo $nrows;
 			if($nrows>0){
 				$ErrorType=1;
 				returnRegister("",$_REQUEST['Username'],$ErrorType);
