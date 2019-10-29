@@ -85,7 +85,7 @@
 			    </div>
 			    <div class="form-group">        
 			      <div class="col-sm-offset-2 col-sm-10">
-			        <button type="submit" class="btn btn-default">Register</button> <button type="submit" class="btn btn-default">Clear</button>
+			        <button type="submit" class="btn btn-default">Register</button> <button type="reset" class="btn btn-default">Clear</button>
 			      </div>
 			    </div>
 			    {if $ErrorType gt -1}
