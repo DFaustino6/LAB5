@@ -34,5 +34,4 @@
 	function returnRegister($Email,$Username,$ErrorType) {
     	header("Location: register.php?ErrorType=$ErrorType&Email=$Email&Username=$Username");
 	}
-	echo $nrows;
 ?>	
